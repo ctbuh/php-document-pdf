@@ -1,0 +1,14 @@
+{
+    "name": "ctbuh/php-document-pdf",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Athlon1600",
+            "email": "Athlon2400@gmail.com"
+        }
+    ],
+    "require": {
+        "ctbuh/wkhtmltopdf-api-php-client": "~1.0"
+    }
+}
