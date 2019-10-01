@@ -1,0 +1,46 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f7cbcbbdf77cd2b1003dce8756178550",
+    "packages": [
+        {
+            "name": "ctbuh/wkhtmltopdf-api-php-client",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctbuh/wkhtmltopdf-api-php-client.git",
+                "reference": "5c73fbf77ce438fdb3726be45ba33704a875c266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctbuh/wkhtmltopdf-api-php-client/zipball/5c73fbf77ce438fdb3726be45ba33704a875c266",
+                "reference": "5c73fbf77ce438fdb3726be45ba33704a875c266",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ctbuh\\PdfApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Remotely render PDFs",
+            "time": "2019-10-01T23:17:28+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

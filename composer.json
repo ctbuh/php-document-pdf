@@ -1,5 +1,6 @@
 {
     "name": "ctbuh/php-document-pdf",
+    "description": "A simple way to deal with Document types.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,6 +10,11 @@
         }
     ],
     "require": {
-        "ctbuh/wkhtmltopdf-api-php-client": "~1.0"
-    }
+        "ctbuh/wkhtmltopdf-api-php-client": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "ctbuh\\Document\\": "src/"
+        }
+      }
 }
