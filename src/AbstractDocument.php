@@ -2,6 +2,7 @@
 
 namespace ctbuh\Document;
 
+use ctbuh\Document\Contracts\DocumentInterface;
 use ctbuh\PdfApi\PdfApi;
 
 abstract class AbstractDocument implements DocumentInterface
@@ -11,7 +12,12 @@ abstract class AbstractDocument implements DocumentInterface
 
     public function getCode()
     {
-        return 'document_pdf';
+        return get_class($this);
+    }
+
+    public function getFolderPath()
+    {
+        return null;
     }
 
     /**
@@ -19,7 +25,7 @@ abstract class AbstractDocument implements DocumentInterface
      */
     abstract public function getFilename();
 
-    public function getClientOptions()
+    protected function getClientOptions()
     {
         return array(
             'api_host' => '',
@@ -30,9 +36,8 @@ abstract class AbstractDocument implements DocumentInterface
 
     public function getOptions()
     {
-        return array();
-
         return array(
+            /*
             'viewportSize' => '1024x768',
             'noOutline' => true,
             'printMediaType' => true,
@@ -43,6 +48,7 @@ abstract class AbstractDocument implements DocumentInterface
             'marginLeft' => '0.5cm',
             'pageSize' => 'A4',
             'dpi' => 96, // 72 recommended, 96 default, has no affect on windows
+            */
         );
     }
 
@@ -62,7 +68,7 @@ abstract class AbstractDocument implements DocumentInterface
     /**
      * @return void
      */
-    final public function downloadPdf()
+    final public function downloadPdf($filename = null)
     {
         $api = new PdfApi();
         $api->download($this->toHtml(), $this->getOptions(), $this->getFilename());
@@ -72,5 +78,11 @@ abstract class AbstractDocument implements DocumentInterface
     {
         $api = new PdfApi();
         return $api->convert($this->toHtml(), $this->getOptions());
+    }
+
+    public function getUrl()
+    {
+        return null;
+        //throw new BadMethodCallException('Pending Implementation! This Document only exists in memory at this moment!');
     }
 }

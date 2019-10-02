@@ -1,6 +1,6 @@
 <?php
 
-namespace ctbuh\Document;
+namespace ctbuh\Document\Contracts;
 
 /**
  * Interface DocumentInterface
@@ -12,12 +12,17 @@ namespace ctbuh\Document;
 interface DocumentInterface
 {
     /**
-     * Uniquely identifies this 'type' of document. Each Document has an owner too.
+     * Uniquely identifies this 'type' of document.
      * @return string
      */
     public function getCode();
 
-    // public function getPathPrefix();
+    /**
+     * Namespace prefix for where this Document would be stored.
+     * TODO: rename to getStoragePath() ?
+     * @return string
+     */
+    public function getFolderPath();
 
     /**
      * Default filename to be used when exporting.
@@ -34,8 +39,18 @@ interface DocumentInterface
     public function toHtml();
 
     /**
-     * PDF document as raw bytes. toBytes(), toPdf()
+     * PDF document as raw bytes.
+     * TODO: move into its own PdfDocumentInterface?
+     * 
      * @return string
      */
     public function asPdf();
+
+    /**
+     * Publicly accessible link for this Document.
+     * S3 URL typically.
+     * 
+     * @return string
+     */
+    public function getUrl();
 }
